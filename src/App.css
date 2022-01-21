@@ -2,37 +2,68 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 3px #bebebe;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    color: #0e3c7e;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.adDesignerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.ad {
+    height: 150px;
+    width: 220px;
+    border: 3px solid #222;
+    box-shadow: 1px 3px 3px 3px #bebebe;
+    background-color: #fff;
+    padding: 20px;
+    color: #000;
+    font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.adLight {
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #222;
+}
+
+.adDark {
+    background-color: #222;
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+.adDesignerSubHeaders {
+    font-size: 1rem;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 5%;
+    background-color: #0e3c7e;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 5px;
+}
+
+button:active {
+    background-color: #1e60a9;
+}
+
+button:disabled {
+    background-color: gray;
 }

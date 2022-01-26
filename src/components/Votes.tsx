@@ -5,9 +5,6 @@ export function Votes() {
     const [chocolateVotes, setChocolateVotes] = useState(0);
     const [vanillaVotes, setVanillaVotes] = useState(0);
     const [strawberryVotes, setStrawberryVotes] = useState(0);
-    const [chocolateBar, setChocolateBar] = useState(0);
-    const [vanillaBar, setVanillaBar] = useState(0);
-    const [strawberryBar, setStrawberryBar] = useState(0);
 
     let totalVotes = chocolateVotes + vanillaVotes + strawberryVotes;
     let chocolatePercentage = ((chocolateVotes / totalVotes) * 100) || 0;

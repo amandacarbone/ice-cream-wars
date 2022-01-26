@@ -2,63 +2,49 @@ import { useState } from 'react';
 
 export function Votes() {
 
-    const [chocolateHeader, setChocolateHeader] = useState("No votes yet.");
-    const [vanillaHeader, setVanillaHeader] = useState("No votes yet.");
-    const [strawberryHeader, setStrawberryHeader] = useState("No votes yet.");
     const [chocolateVotes, setChocolateVotes] = useState(0);
     const [vanillaVotes, setVanillaVotes] = useState(0);
     const [strawberryVotes, setStrawberryVotes] = useState(0);
-    const [totalVotes, setTotalVotes] = useState(0);
-    const [percentage, setPercentage] = useState(0.00);
+    const [chocolateBar, setChocolateBar] = useState(0);
+    const [vanillaBar, setVanillaBar] = useState(0);
+    const [strawberryBar, setStrawberryBar] = useState(0);
 
-    function voteChocolate() {
+    let totalVotes = chocolateVotes + vanillaVotes + strawberryVotes;
+    let chocolatePercentage = ((chocolateVotes / totalVotes) * 100) || 0;
+    let vanillaPercentage = ((vanillaVotes / totalVotes) * 100) || 0;
+    let strawberryPercentage = ((strawberryVotes / totalVotes) * 100) || 0;
 
-        setChocolateHeader(`Chocolate: ${chocolateVotes} (${percentage}%)`);
-        setChocolateVotes(chocolateVotes + 1);
-        setPercentage(this.chocolateVotes / totalVotes * 100);
+    function addVotes(e: any) {
 
-    }
-
-    function voteVanilla() {
-
-        setVanillaHeader(`Vanilla: ${vanillaVotes} (${percentage}%)`);
-        setVanillaVotes(vanillaVotes + 1);
-
-    }
-
-    function voteStrawberry() {
-
-        setStrawberryHeader(`Strawberry: ${strawberryVotes} (${percentage}%)`);
-        setStrawberryVotes(chocolateVotes => chocolateVotes + 1);
-
-    }
-
-    function calculateTotalVotes() {
-
-        setTotalVotes(chocolateVotes + vanillaVotes + strawberryVotes)
-
-        if(chocolateVotes === 0) {
-            setChocolateHeader("No votes yet.")
-            setChocolateVotes(null)
+        if(e.target.value === "Chocolate") {
+            setChocolateVotes(chocolateVotes + 1)
+        } else if(e.target.value === "Vanilla") {
+            setVanillaVotes(vanillaVotes +1);
+        } else if(e.target.value === "Strawberry") {
+            setStrawberryVotes(strawberryVotes + 1);
         }
 
     }
+
 
     return (
         <div className="votesContainer">
             <h2>Vote Here</h2>
             <div className="flavorButtonsContainer">
-                <button onClick={voteChocolate}>Chocolate</button>
-                <button onClick={voteVanilla}>Vanilla</button>
-                <button onClick={voteStrawberry}>Strawberry</button>
+                <button onClick={addVotes} value="Chocolate">Chocolate</button>
+                <button onClick={addVotes} value="Vanilla">Vanilla</button>
+                <button onClick={addVotes} value="Strawberry">Strawberry</button>
             </div>
             <div className="flavorBarsContainer">
-                <h4>{chocolateHeader}</h4>
-                <div className="chocolateBar"></div>
-                <h4>{vanillaHeader}</h4>
-                <div className="vanillaBar"></div>
-                <h4>{strawberryHeader}</h4>
-                <div className="strawberryBar"></div>
+                <h4>Chocolate: {chocolateVotes} ({chocolatePercentage.toFixed(2)}%)</h4>
+                {chocolateVotes > 0 && <div style={{width: `${chocolatePercentage}%`}} className="chocolateBar"></div>}
+                {chocolateVotes === 0 && <p>No votes yet.</p>}
+                <h4>Vanilla: {vanillaVotes} ({vanillaPercentage.toFixed(2)}%)</h4>
+                {vanillaVotes > 0 && <div style={{width: `${vanillaPercentage}%`}} className="vanillaBar"></div>}
+                {vanillaVotes === 0 && <p>No votes yet.</p>}
+                <h4>Strawberry: {strawberryVotes} ({strawberryPercentage.toFixed(2)}%)</h4>
+                {strawberryVotes > 0 && <div style={{width: `${strawberryPercentage}%`}} className="strawberryBar"></div>}
+                {strawberryVotes === 0 && <p>No votes yet.</p>}
             </div>
         </div>
     )

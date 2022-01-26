@@ -8,16 +8,19 @@
 
 .chocolateBar {
     width: 0%;
+    height: 15px;
     background-color: #4f2c2c;
 }
 
 .vanillaBar {
     width: 0%;
+    height: 15px;
     background-color: #cbc0ac;
 }
 
 .strawberryBar {
     width: 0%;
+    height: 15px;
     background-color: #de8c91;
 }
 

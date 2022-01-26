@@ -1,0 +1,10 @@
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 3px #bebebe;
+}
+
+.header {
+    color: #0e3c7e;
+}

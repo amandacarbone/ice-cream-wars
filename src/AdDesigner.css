@@ -1,0 +1,55 @@
+.adDesigner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.ad {
+    height: 150px;
+    width: 220px;
+    border: 3px solid #222;
+    box-shadow: 1px 3px 3px 3px #bebebe;
+    padding: 20px;
+    color: #000;
+    font-weight: 700;
+}
+
+.adLight {
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #000;
+}
+
+.adDark {
+    background-color: #222;
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+.adDesignerSubHeaders {
+    font-size: 1rem;
+}
+
+.fontSize {
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.flavorButtonDisabled {
+    background-color: gray;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

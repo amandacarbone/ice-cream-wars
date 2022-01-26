@@ -1,0 +1,30 @@
+.votesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.chocolateBar {
+    width: 50%;
+    background-color: #4f2c2c;
+}
+
+.vanillaBar {
+    width: 50%;
+    background-color: #cbc0ac;
+}
+
+.strawberryBar {
+    width: 0%;
+    background-color: #de8c91;
+}
+
+@media screen and (min-width: 768px) {
+
+    .votesContainer {
+        transform: translate(500px, -595px);
+    }
+
+}

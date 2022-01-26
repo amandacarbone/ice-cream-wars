@@ -5,17 +5,17 @@ export function Votes() {
     const [chocolateHeader, setChocolateHeader] = useState("No votes yet.");
     const [vanillaHeader, setVanillaHeader] = useState("No votes yet.");
     const [strawberryHeader, setStrawberryHeader] = useState("No votes yet.");
-    const [chocolateVotes, setChocolateVotes] = useState(1);
-    const [vanillaVotes, setVanillaVotes] = useState(1);
-    const [strawberryVotes, setStrawberryVotes] = useState(1);
-    const [totalVotes, setTotalVotes] = useState(1);
-    const [percentage, setPercentage] = useState(0);
-    const [width, setWidth] = useState(0);
+    const [chocolateVotes, setChocolateVotes] = useState(0);
+    const [vanillaVotes, setVanillaVotes] = useState(0);
+    const [strawberryVotes, setStrawberryVotes] = useState(0);
+    const [totalVotes, setTotalVotes] = useState(0);
+    const [percentage, setPercentage] = useState(0.00);
 
     function voteChocolate() {
 
         setChocolateHeader(`Chocolate: ${chocolateVotes} (${percentage}%)`);
         setChocolateVotes(chocolateVotes + 1);
+        setPercentage(this.chocolateVotes / totalVotes * 100);
 
     }
 
@@ -29,18 +29,19 @@ export function Votes() {
     function voteStrawberry() {
 
         setStrawberryHeader(`Strawberry: ${strawberryVotes} (${percentage}%)`);
-        setStrawberryVotes(strawberryVotes + 1);
+        setStrawberryVotes(chocolateVotes => chocolateVotes + 1);
 
     }
 
     function calculateTotalVotes() {
 
-        setTotalVotes(chocolateVotes + vanillaVotes + strawberryVotes);
+        setTotalVotes(chocolateVotes + vanillaVotes + strawberryVotes)
 
-    }
+        if(chocolateVotes === 0) {
+            setChocolateHeader("No votes yet.")
+            setChocolateVotes(null)
+        }
 
-    const flavorBarStyle = {
-        width: width + "%"
     }
 
     return (

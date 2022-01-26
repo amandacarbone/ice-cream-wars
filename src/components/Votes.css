@@ -7,12 +7,12 @@
 }
 
 .chocolateBar {
-    width: 50%;
+    width: 0%;
     background-color: #4f2c2c;
 }
 
 .vanillaBar {
-    width: 50%;
+    width: 0%;
     background-color: #cbc0ac;
 }
 

@@ -1,6 +1,6 @@
 .headerContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     box-shadow: 1px 3px #bebebe;
     padding: 15px;
@@ -8,9 +8,4 @@
 
 .header {
     color: #0e3c7e;
-    margin-bottom: -15px;
-}
-
-.user {
-    color: gray;
 }

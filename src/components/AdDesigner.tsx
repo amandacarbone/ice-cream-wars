@@ -3,50 +3,22 @@ import { useState } from 'react';
 export function AdDesigner() {
 
     const [support, setSupport] = useState("Chocolate");
-    const [colorTheme, setColorTheme] = useState("adLight")
+    const [colorTheme, setColorTheme] = useState("light")
     const [fontSize, setFontSize] = useState(30);
 
-    function toggleChocolate() {
-        if(support === "Vanilla" || support === "Strawberry") {
-            setSupport("Chocolate");
-        }
-    }
-
-    function toggleVanilla() {
-        if(support === "Chocolate" || support === "Strawberry") {
-            setSupport("Vanilla");
-        }
-    }
-
-    function toggleStrawberry() {
-        if(support === "Chocolate" || support === "Vanilla") {
-            setSupport("Strawberry");
-        }
-    }
 
     function toggleLight() {
-        if(colorTheme === "adDark") {
-            setColorTheme("adLight");
+        if(colorTheme === "dark") {
+            setColorTheme("light");
         }
     }
 
     function toggleDark() {
-        if(colorTheme === "adLight") {
-            setColorTheme("adDark");
+        if(colorTheme === "light") {
+            setColorTheme("dark");
         }
     }
 
-    function increaseFontSize() {
-        setFontSize(fontSize + 1);
-    }
-
-    function decreaseFontSize() {
-        setFontSize(fontSize - 1);
-    }
-
-    function updateFontSize(e: any) {
-        setFontSize(e.target.value);
-    }
 
     const fontSizeStyle = {
         fontSize: fontSize + "px"
@@ -61,9 +33,9 @@ export function AdDesigner() {
             </div>
             <h3 className="adDesignerSubHeaders">What to Support</h3>
             <div className="flavorButtonsContainer">
-                <button onClick={toggleChocolate}>Chocolate</button>
-                <button onClick={toggleVanilla}>Vanilla</button>
-                <button onClick={toggleStrawberry}>Strawberry</button>
+                <button onClick={() => setSupport("Chocolate")}>Chocolate</button>
+                <button onClick={() => setSupport("Vanilla")}>Vanilla</button>
+                <button onClick={() => setSupport("Strawberry")}>Strawberry</button>
             </div>
             <h3 className="adDesignerSubHeaders">Color Theme</h3>
             <div className="colorThemeButtonsContainer">
@@ -72,9 +44,9 @@ export function AdDesigner() {
             </div>
             <h3 className="adDesignerSubHeaders">Font Size</h3>
                 <div className="fontSizeButtonsContainer">
-                    <button onClick={decreaseFontSize}>Down</button>
-                    <input className="fontSize" type="number" value={fontSize} onChange={updateFontSize}></input>
-                    <button onClick={increaseFontSize}>Up</button>
+                    <button onClick={() => setFontSize(fontSize - 1)}>Down</button>
+                    <input className="fontSize" type="number" value={fontSize}></input>
+                    <button onClick={() => setFontSize(fontSize + 1)}>Up</button>
                 </div>
         </div>
     )

@@ -16,13 +16,13 @@
     font-weight: 700;
 }
 
-.adLight {
+.light {
     background-color: #fff;
     color: #000;
     border: 3px solid #000;
 }
 
-.adDark {
+.dark {
     background-color: #222;
     color: #fff;
     border: 3px solid #fff;

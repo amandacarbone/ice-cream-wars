@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ice-cream-wars-react/static/css/main.7feae425.css",
+    "main.js": "/ice-cream-wars-react/static/js/main.f88f872e.js",
+    "index.html": "/ice-cream-wars-react/index.html",
+    "main.7feae425.css.map": "/ice-cream-wars-react/static/css/main.7feae425.css.map",
+    "main.f88f872e.js.map": "/ice-cream-wars-react/static/js/main.f88f872e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7feae425.css",
+    "static/js/main.f88f872e.js"
+  ]
+}
